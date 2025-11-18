@@ -14,7 +14,7 @@ void linkedLIstTraversal(struct Node *ptr){
 }
 
 
-// A function which returns a node pointer which is basically a structure pointer --> takes argument as the head pointer and data to be inserted --> dynamically allocates memory for a new node, sets its next to the current head and sets its data to the given data --> then returns the new node pointer which will be the new head of the linked list
+// 1. A function which returns a node pointer which is basically a structure pointer --> takes argument as the head pointer and data to be inserted --> dynamically allocates memory for a new node, sets its next to the current head and sets its data to the given data --> then returns the new node pointer which will be the new head of the linked list
 struct Node * insertAtFirst(struct Node *head, int data){
     struct Node *ptr = (struct Node*)malloc(sizeof(struct Node));
     ptr->data = data;
@@ -24,7 +24,7 @@ struct Node * insertAtFirst(struct Node *head, int data){
 }
 
 
-// A function which returns a node pointer which is basically a structure pointer --> takes argument as the head pointer, data to be inserted and the index position where the node to be inserted --> dynamically allocates memory for a new node -->making the temporary node (structure node pointer) and assign the head, so that it can traverse with reference head --> then a while loop will execute from 0 to index - 2, which is to iterate the temporary node over the chain of nodes, i.e., linked list to the index i-1 --> after temp node getting to index - 1 position, extra node's data will be assign the data given by argument, and its next will point to temp node's next, and that temp node will point to extra node --> then returns the new node pointer which will be the new head of the linked list (will return the same thing in every case, that is head)
+// 2. A function which returns a node pointer which is basically a structure pointer --> takes argument as the head pointer, data to be inserted and the index position where the node to be inserted --> dynamically allocates memory for a new node -->making the temporary node (structure node pointer) and assign the head, so that it can traverse with reference head --> then a while loop will execute from 0 to index - 2, which is to iterate the temporary node over the chain of nodes, i.e., linked list to the index i-1 --> after temp node getting to index - 1 position, extra node's data will be assign the data given by argument, and its next will point to temp node's next, and that temp node will point to extra node --> then returns the new node pointer which will be the new head of the linked list (will return the same thing in every case, that is head)
 struct Node * insertAtIndex(struct Node *head, int data, int index){
     struct Node *ptr = (struct Node*)malloc(sizeof(struct Node));
     struct Node *p = head;
@@ -40,7 +40,7 @@ struct Node * insertAtIndex(struct Node *head, int data, int index){
 }
 
 
-
+// 3. A function which returns a node pointer which is basically a structure pointer --> takes argument as the head pointer and data to be inserted --> dynamically allocates memory for a new node and data is equal to the given data from user --> making a temporary node (structure node pointer) and assign the head, so that it can traverse with reference head --> then a while loop will execute until the pointer's next reached to NULL, which is to iterate the temporary node over the chain of nodes, i.e., linked list to the end --> after temp node getting to end - 1 position, end -1 position node's next will point to extra node, and that extra node's next will point to NULL --> then returns the new node pointer which will be the new head of the linked list (will return the same thing in every case, that is head)
 struct Node * insertAtEnd(struct Node *head, int data){
     struct Node *ptr = (struct Node*)malloc(sizeof(struct Node));
     ptr->data = data;
@@ -53,6 +53,19 @@ struct Node * insertAtEnd(struct Node *head, int data){
     ptr->next = NULL;
     return head;
 }
+
+
+// 4. A function which returns a node pointer which is basically a structure pointer --> takes argument as the head pointer(which is not necessary), address of previous node, and data to be inserted in the new node --> dynamically allocates memory for a new node and data is equal to the given data from user --> i will make the new node's next point to previous node's next and will make previous node's next point to the new node --> then returns the new node pointer which will be the new head of the linked list (will return the same thing in every case, that is head) (which is ofc not necessary)
+struct Node * insertAfterNode(struct Node *head, struct Node *prevNode, int data){
+    struct Node *ptr = (struct Node*)malloc(sizeof(struct Node));
+    ptr->data = data;
+
+    ptr->next = prevNode->next;
+    prevNode->next = ptr;
+
+    return head;
+}
+
 
 int main() {
     struct Node* head;
@@ -86,7 +99,8 @@ int main() {
     linkedLIstTraversal(head);
     // head = insertAtFirst(head, 56);
     // head = insertAtIndex(head, 56, 1);
-    head = insertAtEnd(head, 56);
+    // head = insertAtEnd(head, 56);
+    head = insertAfterNode(head, second, 45);
     printf("Linked list after insertion\n");
     linkedLIstTraversal(head);
 
