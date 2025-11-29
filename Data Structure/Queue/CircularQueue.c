@@ -25,6 +25,9 @@
 //           6       2
 //           5   4   3
 
+// Always front and rear in circular queue is 0.
+
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -62,7 +65,7 @@ void enqueue(struct CircularQueue* q, int val) {
 int dequeue(struct CircularQueue* q){
     int a = - 1;
     if (isEmpty(q)){
-        printf("Queue Underflow!\n");
+        printf("Queue Underflow! ");
     } else {
         q->f = (q->f+1) % q->size;
         a = q->arr[q->f];
@@ -73,7 +76,7 @@ int dequeue(struct CircularQueue* q){
 int main() {
     struct CircularQueue * q = (struct CircularQueue*)malloc(sizeof(struct CircularQueue));
     q->size = 4;
-    q->f = q->r = -1;
+    q->f = q->r = 0;
     q->arr = (int*)malloc(q->size * sizeof(int));
     
     if (isEmpty(q)){printf("Queue is empty\n");}
@@ -83,8 +86,14 @@ int main() {
     enqueue(q, 12);
     enqueue(q, 15);
     enqueue(q, 13);
-    enqueue(q, 14);
+    // enqueue(q, 14);
+
+    if (isEmpty(q)){printf("Queue is empty\n");}
+    if (isFull(q)){printf("Queue is full\n");}
+    
     // Dequeue few elements
+    printf("Dequeued %d from queue\n", dequeue(q));
+    printf("Dequeued %d from queue\n", dequeue(q));
     printf("Dequeued %d from queue\n", dequeue(q));
     
     if (isEmpty(q)){printf("Queue is empty\n");}
