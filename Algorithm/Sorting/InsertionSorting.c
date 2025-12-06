@@ -1,10 +1,3 @@
-// 2 5 9 4 7 3
-// have to add some key and then compare with previous element, the key will be for checking is at 1, 2, 3, 4, 5 position of the array, so 1 to n-1
-
-// 2 5 9 | 4 7 3 //--> i=3, j = 2
-// 2 5 9 | 9 7 3 //--> i=3, j = 1
-// 2 5 5 | 9 7 3 //--> i=3, j = 0
-
 // Insertion Sort Implementation in C
 
 // Less assume an array of integers and its size are given, let the size is 5...
@@ -90,7 +83,7 @@ int main() {
 
     insertionSort(A, n);
     
-    printf("Original arr: ");
+    printf("Sorted array: ");
     printArray(A, n);
     
     return 0;
