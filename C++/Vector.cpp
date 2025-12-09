@@ -1,3 +1,7 @@
+// Vector is a dynamically allocated array which use contiguous storage locations for their elements...
+// We can redefine its size, not like usual arrays...
+
+
 #include<iostream>
 #include<vector> // This is for vector use
 using namespace std;
@@ -19,7 +23,10 @@ int main(){
         cin>>element;
         vec1.push_back(element);
     }
-    vec1.pop_back();
+    // vec1.pop_back();
+    display(vec1);
+    vector<int> :: iterator iter = vec1.begin();
+    vec1.insert(iter+1, 536);
     display(vec1);
     return 0;
 }
