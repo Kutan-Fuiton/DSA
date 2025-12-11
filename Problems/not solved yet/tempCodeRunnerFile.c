@@ -1,34 +1,12 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
 
-
-char* convert(char* s, int numRows) {
-    char * arr = (char*)malloc((strlen(s)+1)*sizeof(char));
-    arr[0] = '\0';
-    int top = 0, prev= 0, down = 1, count = 0, nxt;
-    for (int i = 0; i < strlen(s); i++){
-        nxt = (down == 1) ? prev + (2*(numRows-top)-2) : prev + (2*(top));
-        if (nxt > strlen(s)-1){top++;count--;}
-        if (top >= 0 && top < numRows && count == 0){
-            arr[strlen(arr)+1] = '\0';
-            arr[i] = s[top];
-            
-            prev = top;
-            if (top == numRows-1){down = 0;}else{down=1;}
-            count = 1;
-        } else {
-            nxt = (down == 1) ? prev + (2*(numRows-top)-2) : prev + (2*(top));
-
-            if (top == 0){down = 1;}
-            else if (top == numRows-1){down = 0;} 
-            else {down = (down == 1) ? 0 : 1;}
-            
-            
-            prev = nxt;
-            arr[strlen(s)+1] = '\0';
-            arr[i] = s[nxt];
-        }
-    }
-    return arr;
-}
+// int trap(int* height, int heightSize) {
+//     int * max = (int *)malloc(heightSize * sizeof(int));
+//     int len=0;
+//     for (int i = 0; i < heightSize; i++){
+//         if (i == 0 && (height[i]>height[i+1])){max[len++] = i;printf("%d: %d\n", i, height[i]);}
+//         else if (i == heightSize - 1 && (height[i]>height[i-1])){max[len++] = i;printf("%d: %d\n", i, height[i]);}
+//         else if ((height[i]>height[i-1]) && (height[i]>height[i+1])){max[len++] = i;printf("%d: %d\n", i, height[i]);}
+//         else {continue;}
+//     }
+//     return len;
+// }
