@@ -3,7 +3,7 @@
 
 // How many edges counts the depth/height
 
-//    0 --------> 1 --------> 2 -------> 3
+//    0 --------> 1 --------> 2 -------> 3               // (n - 1) edges for n nodes  --> 9 nodes, 8 edges, 1 is less because of root...
 
 
 //                      |---> 3 ---|
