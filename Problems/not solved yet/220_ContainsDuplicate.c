@@ -14,10 +14,10 @@ bool containsNearbyAlmostDuplicate(int* nums, int numsSize, int indexDiff, int v
 }
 
 int main() {
-    int arr[] = {1, 0, 1, 1};
+    int arr[] = {1, 5, 9, 3, 12, 7, 4, 8, 6, 2};
     int size = sizeof(arr)/sizeof(arr[0]);
 
-    if (containsNearbyAlmostDuplicate(arr, size, 1, 2)){
+    if (containsNearbyAlmostDuplicate(arr, size, 3, 2)){
         printf("true");
     } else {printf("false");}
     
