@@ -1,7 +1,4 @@
-vector<vector<int>> envelopes = {
-        {1,8},
-        {2,3},
-        {3,4},
-        {4,5},
-        {5,6}
-    };
+for (int j = 0; j < next_bottom.size(); j++){
+        //     cout << next_bottom[j] << " ";
+        // }
+        // cout << endl;
