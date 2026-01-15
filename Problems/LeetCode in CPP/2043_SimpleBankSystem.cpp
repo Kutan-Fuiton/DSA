@@ -49,8 +49,8 @@ int main(){
 
     Bank Bank(balance);   // initiated...
 
-    // cout << Bank.withdraw(2, 100) << endl;
-    // cout << Bank.deposit(2, 100) << endl;
+    cout << Bank.withdraw(2, 100) << endl;
+    cout << Bank.deposit(2, 100) << endl;
     
     cout << Bank.transfer(1, 2, 200) << endl;
 
