@@ -176,4 +176,22 @@
 
 // #######
 // That means rotate operations are 2:-
-// -- Left Rotate wrt a node
+// -- Left Rotate wrt a node - Node is moved towards the left
+// -- Right Rotate wrt a node - Node is moved towards the right
+
+//          9                                       15
+//         / \                                      / \ 
+//        /   \         (Left Rotate)              /   \  
+//       8    15        ------------->            9    20      
+//            / \       <-------------           / \ 
+//           11  20     (Right Rotate)          8  11
+
+
+// Left rotate and right rotate around the root node...
+
+
+// Balancing a AVL tree after insertion
+// 1. For a left-left insertion - clockwise rotate once wrt the first imbalance node
+// 2. For a right-right insertion - anti-clockwise rotate once wrt the first imbalance node
+// 3. For a left-right insertion - anti-clockwise rotate once and then clockwise rotate once
+// 4. For a right-left insertion - clockwise rotate once and then anti-clockwise rotate once
