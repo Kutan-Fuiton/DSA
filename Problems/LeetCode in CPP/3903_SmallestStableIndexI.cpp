@@ -25,12 +25,6 @@ public:
     }
 };
 
-
-        // For testing purpose
-        // for (int i = 0; i < n; ++i){
-        //     cout << maxNum[i] << "   " << minNum[i] << endl;
-        // }
-
 int main(){
     Solution sol;
     // vector<int> nums = {5, 0, 1, 4}; int k = 3;
